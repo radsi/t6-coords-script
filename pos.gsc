@@ -20,13 +20,13 @@ onPlayerConnect()
 
 onplayerspawned(){
 	self endon("disconnect");
-	self thread zombie_counter();
+	self thread get_pos();
 	for(;;){
 		self waittill("spawned_player");
 	}
 }
 
-zombie_counter(){
+get_pos(){
     level endon( "game_ended" );
     self endon("disconnect");
     flag_wait( "initial_blackscreen_passed" );
